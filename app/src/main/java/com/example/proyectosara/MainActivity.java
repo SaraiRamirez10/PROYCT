@@ -52,6 +52,14 @@ public class MainActivity extends AppCompatActivity {
             mOptionButton.setEnabled(false);
 
 
+        mOptionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showOptions();
+            }
+        });
+    }
+
         private boolean mayRequestStoragePermission() {
 
 
