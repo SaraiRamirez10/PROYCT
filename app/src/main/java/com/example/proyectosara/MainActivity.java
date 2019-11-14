@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
+        mSetImage = (ImageView) findViewById(R.id.set_picture);
+        mOptionButton = (Button) findViewById(R.id.show_options_button);
+        mRlView = (RelativeLayout) findViewById(R.id.rl_view);
 
 
     }
