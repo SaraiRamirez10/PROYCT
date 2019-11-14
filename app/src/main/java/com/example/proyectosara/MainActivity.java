@@ -61,11 +61,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
         private boolean mayRequestStoragePermission() {
+            if(Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
+                return true;
 
 
+            return false;
         }
 
-}
+
         private void showOptions() {
             final CharSequence[] option = {"Tomar foto", "Elegir de galeria", "Cancelar"};
             final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
