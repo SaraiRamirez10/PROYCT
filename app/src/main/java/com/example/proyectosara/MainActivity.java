@@ -45,7 +45,16 @@ public class MainActivity extends AppCompatActivity {
         mRlView = (RelativeLayout) findViewById(R.id.rl_view);
 
 
+        if(mayRequestStoragePermission())
+            mOptionButton.setEnabled(true);
+        else
+            mOptionButton.setEnabled(false);
+
+
         private boolean mayRequestStoragePermission() {
+
+
+        }
 
 }
         private void showOptions() {
