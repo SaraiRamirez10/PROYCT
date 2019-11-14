@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -40,5 +41,21 @@ public class MainActivity extends AppCompatActivity {
 
         mSetImage = (ImageView) findViewById(R.id.set_picture);
         mOptionButton = (Button) findViewById(R.id.show_options_button);
+        mRlView = (RelativeLayout) findViewById(R.id.rl_view);
+
+        if(mayRequestStoragePermission())
+            mOptionButton.setEnabled(true);
+        else
+            mOptionButton.setEnabled(false);
+
+        mOptionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showOptions();
+            }
+        });
+    }
+    private boolean mayRequestStoragePermission() {
+
     }
 }
