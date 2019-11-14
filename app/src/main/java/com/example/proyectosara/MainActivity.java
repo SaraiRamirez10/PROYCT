@@ -43,19 +43,9 @@ public class MainActivity extends AppCompatActivity {
         mOptionButton = (Button) findViewById(R.id.show_options_button);
         mRlView = (RelativeLayout) findViewById(R.id.rl_view);
 
-        if(mayRequestStoragePermission())
-            mOptionButton.setEnabled(true);
-        else
-            mOptionButton.setEnabled(false);
 
-        mOptionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showOptions();
-            }
-        });
-    }
-    private boolean mayRequestStoragePermission() {
+        private boolean mayRequestStoragePermission() {
 
+}
     }
 }
