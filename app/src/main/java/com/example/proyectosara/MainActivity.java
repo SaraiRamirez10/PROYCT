@@ -1,8 +1,10 @@
 package com.example.proyectosara;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int TAKE_PICTURE = 0;
     private Uri imageUri;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
