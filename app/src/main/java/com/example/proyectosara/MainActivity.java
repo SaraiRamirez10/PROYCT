@@ -1,6 +1,7 @@
 package com.example.proyectosara;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.net.Uri;
@@ -49,6 +50,6 @@ public class MainActivity extends AppCompatActivity {
 }
         private void showOptions() {
             final CharSequence[] option = {"Tomar foto", "Elegir de galeria", "Cancelar"};
-        }
+            final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
     }
 }
