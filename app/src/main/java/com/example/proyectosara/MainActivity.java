@@ -51,5 +51,6 @@ public class MainActivity extends AppCompatActivity {
         private void showOptions() {
             final CharSequence[] option = {"Tomar foto", "Elegir de galeria", "Cancelar"};
             final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setTitle("Eleige una opción");
     }
 }
