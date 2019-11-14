@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -61,5 +62,10 @@ public class MainActivity extends AppCompatActivity {
             final CharSequence[] option = {"Tomar foto", "Elegir de galeria", "Cancelar"};
             final AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
             builder.setTitle("Eleige una opción");
+            builder.setItems(option, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if(option[which] == "Tomar foto") {
+                }
     }
 }
