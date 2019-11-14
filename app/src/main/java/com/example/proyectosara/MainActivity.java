@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,6 +14,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+
+import static android.Manifest.permission.CAMERA;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 public class MainActivity extends AppCompatActivity {
     private static String APP_DIRECTORY = "MyPictureApp/";
@@ -62,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
 
         private boolean mayRequestStoragePermission() {
             if(Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
+                return true;
+
+            if((checkSelfPermission(WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) &&
+                    (checkSelfPermission(CAMERA) == PackageManager.PERMISSION_GRANTED))
                 return true;
 
 
