@@ -47,5 +47,8 @@ public class MainActivity extends AppCompatActivity {
         private boolean mayRequestStoragePermission() {
 
 }
+        private void showOptions() {
+            final CharSequence[] option = {"Tomar foto", "Elegir de galeria", "Cancelar"};
+        }
     }
 }
