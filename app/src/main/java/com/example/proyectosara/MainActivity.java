@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
 
-
+        mSetImage = (ImageView) findViewById(R.id.set_picture);
+        mOptionButton = (Button) findViewById(R.id.show_options_button);
     }
 }
