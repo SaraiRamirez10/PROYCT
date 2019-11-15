@@ -170,6 +170,8 @@ public class MainActivity extends AppCompatActivity {
                     Bitmap bitmap = BitmapFactory.decodeFile(mPath);
                     mSetImage.setImageBitmap(bitmap);
                     break;
+                case SELECT_PICTURE:
+                    Uri path = data.getData();
 
             }
         }
