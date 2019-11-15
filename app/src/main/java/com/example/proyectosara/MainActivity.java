@@ -157,9 +157,17 @@ public class MainActivity extends AppCompatActivity {
                 case PHOTO_CODE:
                     MediaScannerConnection.scanFile(this,
                             new String[]{mPath}, null,
+                            new MediaScannerConnection.OnScanCompletedListener() {
+                                @Override
+                                public void onScanCompleted(String path, Uri uri) {
+
+                                }
             }
 
+
             }
+
+        }
 
     }
 }
