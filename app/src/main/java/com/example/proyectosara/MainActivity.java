@@ -124,6 +124,10 @@ public class MainActivity extends AppCompatActivity {
         if(isDirectoryCreated){
             Long timestamp = System.currentTimeMillis() / 1000;
             String imageName = timestamp.toString() + ".jpg";
+
+            mPath = Environment.getExternalStorageDirectory() + File.separator + MEDIA_DIRECTORY
+                    + File.separator + imageName;
+
     }
     }
 
