@@ -128,6 +128,8 @@ public class MainActivity extends AppCompatActivity {
             mPath = Environment.getExternalStorageDirectory() + File.separator + MEDIA_DIRECTORY
                     + File.separator + imageName;
 
+            File newFile = new File(mPath);
+
     }
     }
 
