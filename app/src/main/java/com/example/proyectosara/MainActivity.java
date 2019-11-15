@@ -120,6 +120,11 @@ public class MainActivity extends AppCompatActivity {
         boolean isDirectoryCreated = file.exists();
         if(!isDirectoryCreated)
             isDirectoryCreated = file.mkdirs();
+
+        if(isDirectoryCreated){
+            Long timestamp = System.currentTimeMillis() / 1000;
+            String imageName = timestamp.toString() + ".jpg";
+    }
     }
 
 }
