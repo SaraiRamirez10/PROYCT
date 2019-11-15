@@ -8,6 +8,8 @@ import android.annotation.TargetApi;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Build;
@@ -165,6 +167,9 @@ public class MainActivity extends AppCompatActivity {
                                     Log.i("ExternalStorage", "-> Uri = " + uri);
                                 }
                             });
+                    Bitmap bitmap = BitmapFactory.decodeFile(mPath);
+                    mSetImage.setImageBitmap(bitmap);
+                    break;
 
             }
         }
