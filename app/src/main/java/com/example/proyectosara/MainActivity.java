@@ -112,5 +112,8 @@ public class MainActivity extends AppCompatActivity {
             builder.show();
         }
 
+    private void openCamera() {
+
+    }
 
 }
