@@ -13,6 +13,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StrictMode;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -129,6 +130,10 @@ public class MainActivity extends AppCompatActivity {
                     + File.separator + imageName;
 
             File newFile = new File(mPath);
+
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(newFile));
+            startActivityForResult(intent, PHOTO_CODE);
 
     }
     }
