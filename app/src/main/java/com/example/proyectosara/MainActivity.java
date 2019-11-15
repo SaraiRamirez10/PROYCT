@@ -110,7 +110,8 @@ public class MainActivity extends AppCompatActivity {
             builder.setItems(option, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    if(option[which] == "Tomar foto") {
+                    if(option[which] == "Tomar foto"){
+                        openCamera();
                         Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                         intent.setType("image/*");
                         startActivityForResult(intent.createChooser(intent, "Selecciona app de imagen"), SELECT_PICTURE);
@@ -124,26 +125,28 @@ public class MainActivity extends AppCompatActivity {
         }
 
     private void openCamera() {
-        File file = new File(Environment.getExternalStorageDirectory(), MEDIA_DIRECTORY);
-        boolean isDirectoryCreated = file.exists();
+    File file = new File(Environment.getExternalStorageDirectory(), MEDIA_DIRECTORY);
+    boolean isDirectoryCreated = file.exists();
+
         if(!isDirectoryCreated)
-            isDirectoryCreated = file.mkdirs();
+        isDirectoryCreated = file.mkdirs();
 
         if(isDirectoryCreated){
-            Long timestamp = System.currentTimeMillis() / 1000;
-            String imageName = timestamp.toString() + ".jpg";
+        Long timestamp = System.currentTimeMillis() / 1000;
+        String imageName = timestamp.toString() + ".jpg";
 
-            mPath = Environment.getExternalStorageDirectory() + File.separator + MEDIA_DIRECTORY
-                    + File.separator + imageName;
+        mPath = Environment.getExternalStorageDirectory() + File.separator + MEDIA_DIRECTORY
+                + File.separator + imageName;
 
-            File newFile = new File(mPath);
 
-            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(newFile));
-            startActivityForResult(intent, PHOTO_CODE);
+        File newFile = new File(mPath);
 
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(newFile));
+        startActivityForResult(intent, PHOTO_CODE);
     }
-    }
+}
+
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
