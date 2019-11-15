@@ -11,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +19,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.google.android.material.snackbar.Snackbar;
+
+import java.io.File;
 
 import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
@@ -113,7 +116,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
     private void openCamera() {
-
+        File file = new File(Environment.getExternalStorageDirectory(), MEDIA_DIRECTORY);
+        boolean isDirectoryCreated = file.exists();
     }
 
 }
