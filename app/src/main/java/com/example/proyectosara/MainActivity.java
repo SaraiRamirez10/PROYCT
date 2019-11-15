@@ -164,12 +164,9 @@ public class MainActivity extends AppCompatActivity {
                                     Log.i("ExternalStorage", "Scanned " + path + ":");
                                     Log.i("ExternalStorage", "-> Uri = " + uri);
                                 }
+                            });
+
             }
-
-
-            }
-
         }
-
     }
 }
