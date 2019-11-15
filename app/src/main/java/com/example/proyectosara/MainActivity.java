@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.TargetApi;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -14,6 +15,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
@@ -71,6 +74,19 @@ public class MainActivity extends AppCompatActivity {
             if((checkSelfPermission(WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) &&
                     (checkSelfPermission(CAMERA) == PackageManager.PERMISSION_GRANTED))
                 return true;
+            if((shouldShowRequestPermissionRationale(WRITE_EXTERNAL_STORAGE)) || (shouldShowRequestPermissionRationale(CAMERA))){
+                Snackbar.make(mRlView, "Los permisos son necesarios para poder usar la aplicación",
+                        Snackbar.LENGTH_INDEFINITE).setAction(android.R.string.ok, new View.OnClickListener() {
+                    @TargetApi(Build.VERSION_CODES.M)
+                    @Override
+                    public void onClick(View v) {
+                        requestPermissions(new String[]{WRITE_EXTERNAL_STORAGE, CAMERA}, MY_PERMISSIONS);
+                    }
+                });
+            }else{
+                requestPermissions(new String[]{WRITE_EXTERNAL_STORAGE, CAMERA}, MY_PERMISSIONS);
+            }
+
 
 
             return false;
@@ -87,4 +103,8 @@ public class MainActivity extends AppCompatActivity {
                     if(option[which] == "Tomar foto") {
                 }
     }
+}
+
+        }
+
 }
