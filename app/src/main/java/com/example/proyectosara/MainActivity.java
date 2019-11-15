@@ -118,6 +118,8 @@ public class MainActivity extends AppCompatActivity {
     private void openCamera() {
         File file = new File(Environment.getExternalStorageDirectory(), MEDIA_DIRECTORY);
         boolean isDirectoryCreated = file.exists();
+        if(!isDirectoryCreated)
+            isDirectoryCreated = file.mkdirs();
     }
 
 }
