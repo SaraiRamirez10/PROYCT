@@ -188,7 +188,15 @@ public class MainActivity extends AppCompatActivity {
         if(grantResults.length == 2 && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED){
             Toast.makeText(MainActivity.this, "Permisos aceptados", Toast.LENGTH_SHORT).show();
             mOptionButton.setEnabled(true);
+        }else{
+            showExplanation();
         }
+    }
 
+    private void showExplanation() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Permisos denegados");
     }
 }
+
+
