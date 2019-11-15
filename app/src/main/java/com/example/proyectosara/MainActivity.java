@@ -103,10 +103,14 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                         intent.setType("image/*");
                         startActivityForResult(intent.createChooser(intent, "Selecciona app de imagen"), SELECT_PICTURE);
+                    }else {
+                        dialog.dismiss();
+                    }
                 }
-    }
-}
+            });
 
+            builder.show();
         }
+
 
 }
