@@ -172,6 +172,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case SELECT_PICTURE:
                     Uri path = data.getData();
+                    mSetImage.setImageURI(path);
+                    break;
+
 
             }
         }
